@@ -1,0 +1,26 @@
+//check for data types
+// using typeof function below
+
+typeof 12;
+// "number"
+
+typeof 'Astros';
+// "string"
+
+typeof true;
+// "boolean"
+
+typeof { name: "Kristine" };
+// "object"
+
+var age;
+// undefined
+
+typeof age;
+// "undefined"
+
+age = null;
+// null
+
+typeof age;
+// "object"
