@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Lodash Demo</title>
+    <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.4/lodash.min.js"></script>
+  </head>
+  <body>
+    <!-- http://houston.astros.mlb.com/stats/sortable.jsp?c_id=hou#playerType=ALL&elem=%5Bobject+Object%5D&tab_level=child&click_text=Sortable+Player+hitting&game_type='R'&season=2017&season_type=ANY&league_code='MLB'&sectionType=sp&statType=hitting&page=1&ts=1516406323861&sortColumn=g&sortOrder='desc'&extended=0 -->
+  </body>
+
+  <script>
+    //TIMES-allows you to quickly how many times a process to run
+      randNumber = () => {
+          return Math.round(Math.random() * 100) // calling math library and we want to return a number between 1 and 100
+      }
+      const sampleNumbers = _.times(5, randNumber); //times takes in 2 arguments 5 and calling the randNumber(all stored in a single variable) undescore gives you access
+                                                    // the underscore then a dot and then you can call any function the 5 is how many random numbers (times knows randNumber is a function) STORES AS ARRAY
+      console.log(sampleNumbers);  //it's running the process and gives you random numbers every time you refresh
+    //////////////////////////////////////////////////
+    //FILTER-building something like a top player report 
+      //set/collection of 5 objects below
+    const players = [
+      { name: 'Bregman, A', battingAverage: 0.284},
+      { name: 'Altuve, J', battingAverage: 0.384},
+      { name: 'Springer, G', battingAverage: 0.283},
+      { name: 'Gurriel, Y', battingAverage: 0.299},
+      { name: 'Gonzalez, M', battingAverage: 0.303}
+    ] 
+    const over300 = _.filter(players, player => {   // variable over300 set equal to the underscore filter(takes in players array and an arrow function with one argument player)
+        return player.battingAverage > 0.300;       // now tell filter what to filter -return player battingAverage over .300
+    }); //takes in a few items players array then a function
+    console.log(over300); // returns an array of players 
+  /////////////////////////////////////////////////
+    </script>
+</html>
