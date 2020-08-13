@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    const getCurrentContentLength = (content, max) => {     //create a variable which takes in takes in 2 arguments the content and max value
+      const maxLength = max;                                // 
+      if (content.length > maxLength) {                     // basic conditional here- if content lentth is greater than max then return false
+        return false;                                       // return false-no longer insuring character count
+      } else {
+        return true;                                        // otherwise return true
+      }
+    }
+    const msgInput = document.querySelector('.msgInput');    //set the variable here msgInput use the query selector and pass in the msgInput class
+    const counter = document.querySelector('.counter');      // grab the message counter and pass in the counter class
+    const max = 20;                                          // max count set to 20 here
+  
+    // Nope
+    // msgInput.addEventListener('onkeyup', (e) => {       //arrow function changes the scope of the defined, so it won't work
+    //   console.log(e); 
+    // });
+  
+    msgInput.onkeyup = function() {                          // use onkeyup and set it equal to function declaration
+      counter.innerHTML = max - this.value.length;           // grab the message counter inner html(to set value) set equal to max then minus the value length
+      if(!getCurrentContentLength(this.value, (max - 1))) {  // if the function length (takes in this.value), and takes in the max -1----if you don't do minus 1 the values will return an off by one error
+        msgInput.disabled = true;                            //then say message input disabled to true
+      }
+    }
+</script>
+</html>

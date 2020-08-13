@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id = "demo"></p>
+    <p>Click button to fill array element with the value of Motocycle</p>
+    <button onclick="myFunction">Click here</button>
+    <script>
+        var cars = [ "fords", "mazda", "tesla", "honda"];
+            document.getElementById("demo").innerHTML = cars;
+        function myFunction() {
+            document.getElementById("demo").innerHTML = cars.fill("motocycles")
+
+        }
+    </script>
+</body>
+</html>
